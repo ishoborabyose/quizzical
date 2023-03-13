@@ -31,7 +31,7 @@ const Question = ({ q, id, handleClickAnswer }) => {
             key={nanoid()}
             id={id}
             className={`text-[#293264] bg-transparent border border-[#4d5b9e] font-medium  text-xs rounded-[10px] mr-[13px] mb-1 py-[2px] px-[8px] answer ${
-              answer === q.selected ? "bg-[#D6DBF5] selected" : ""
+              answer === q.selected ? "selected" : ""
             }  `}
             onClick={() => handleClick(answer)}
           >
