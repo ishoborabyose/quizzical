@@ -5,7 +5,7 @@ const Menu = ({ start }) => {
       <span className="text-gray-600">Description</span>
       <button
         className="text-white rounded-[10px] py-4 px-8 bg-[#4d5b9e]"
-        onClick={() => start()}
+        onClick={start}
       >
         Start Quizzical
       </button>

@@ -18,9 +18,9 @@ const App = () => {
         "https://opentdb.com/api.php?amount=5&category=18&encode=base64"
       );
       const data = await res.json();
-      let q = [];
+      let quiz = [];
       data.results.forEach((question) => {
-        q.push({
+        quiz.push({
           id: nanoid(),
           answers: shuffleArray([
             ...question.incorrect_answers,
@@ -32,7 +32,7 @@ const App = () => {
           checked: false,
         });
       });
-      setQuestion(q);
+      setQuestion(quiz);
     }
     getQuestion();
   }, [count]);
@@ -83,7 +83,7 @@ const App = () => {
         return (
           <Question
             key={question.id}
-            q={question}
+            quiz={question}
             handleClickAnswer={handleClickAnswer}
             id={question.id}
           />
@@ -91,9 +91,7 @@ const App = () => {
       })
     : [];
 
-  const start = () => {
-    setStarted((x) => !x);
-  };
+  const start = () => setStarted(!started);
 
   return (
     <div className="max-w-5xl mx-auto mt-36  flex items-center justify-center">
